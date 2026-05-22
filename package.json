@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-agentic-ai-web-service",
+  "version": "1.0.0",
+  "description": "Agentic AI portfolio web service for SME retail banking customer support problem solving.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

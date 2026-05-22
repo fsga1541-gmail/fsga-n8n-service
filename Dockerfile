@@ -1,3 +1,7 @@
-FROM docker.n8n.io/n8nio/n8n:latest
-
-EXPOSE 5678
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --omit=dev
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
