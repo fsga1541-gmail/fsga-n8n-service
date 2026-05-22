@@ -1,88 +1,89 @@
-# n8n GitHub + Render Deployment
+# GitHub-ready n8n Deployment for Render
 
-This repository contains the minimum files required to deploy **n8n** from GitHub using Docker.
+This repository contains the required files to run **n8n** from GitHub using **Render Docker Web Service**.
 
-## Files Included
+## Upload to GitHub
+
+1. Extract the ZIP file.
+2. Create a new GitHub repository.
+3. Upload all files inside this folder to the top level of the repository.
+4. Make sure `Dockerfile` is visible on the first page of the GitHub repo.
+
+Correct layout:
 
 ```text
-Dockerfile
-.env.example
-.gitignore
-README.md
-render.yaml
-sample-workflows/sample-webhook-test-workflow.json
+your-repo/
+├── Dockerfile
+├── .env.example
+├── .gitignore
+├── render.yaml
+├── README.md
+├── DEPLOYMENT_CHECKLIST.md
+└── workflows/
 ```
 
 ## Deploy to Render
 
-1. Upload all files in this folder to a new GitHub repository.
-2. Go to Render.
-3. Click **New +**.
-4. Choose **Web Service**.
-5. Select **Build and deploy from a Git repository**.
-6. Connect your GitHub repository.
-7. Choose **Docker** as the environment/runtime.
-8. Leave Build Command and Start Command empty.
-9. Add the environment variables listed below.
-10. Click **Create Web Service**.
+1. Go to Render.
+2. Click **New +**.
+3. Choose **Web Service**.
+4. Select **Build and deploy from a Git repository**.
+5. Connect this GitHub repository.
+6. Use these settings:
+
+```text
+Runtime / Environment: Docker
+Branch: main
+Root Directory: leave empty
+Build Command: leave empty
+Start Command: leave empty
+```
+
+7. Click **Create Web Service**.
 
 ## Required Render Environment Variables
 
-In Render, open your service:
+In Render, go to:
 
 ```text
-Environment → Add Environment Variable
+Your Service → Environment
 ```
 
-Add these:
+Add these variables:
 
 ```text
 N8N_HOST=your-render-service-name.onrender.com
 N8N_PORT=5678
+PORT=5678
 N8N_PROTOCOL=https
 WEBHOOK_URL=https://your-render-service-name.onrender.com/
 GENERIC_TIMEZONE=Asia/Singapore
 TZ=Asia/Singapore
+N8N_PROXY_HOPS=1
 N8N_ENCRYPTION_KEY=replace-with-a-long-random-secret-key
 ```
 
-## Optional Basic Login Protection
+## Open n8n
 
-You can add these environment variables in Render:
-
-```text
-N8N_BASIC_AUTH_ACTIVE=true
-N8N_BASIC_AUTH_USER=admin
-N8N_BASIC_AUTH_PASSWORD=replace-with-strong-password
-```
-
-## After Deployment
-
-Open:
+After deployment is live, open:
 
 ```text
 https://your-render-service-name.onrender.com
 ```
 
-You should see the n8n setup page.
+## Import Workflow JSON
 
-## Import Sample Workflow
-
-Inside n8n:
+After n8n is running:
 
 ```text
-Workflows → Import from File
+n8n → Workflows → Import from File
 ```
 
-Import:
-
-```text
-sample-workflows/sample-webhook-test-workflow.json
-```
+You can import workflow JSON files from the `workflows/` folder.
 
 ## Important Notes
 
-- Do not commit your real `.env` file.
-- Keep `N8N_ENCRYPTION_KEY` safe. If you change it later, existing credentials may not decrypt.
-- Render free services may sleep, so workflows may not run reliably on the free tier.
-- For serious automation, use a paid instance or a VPS.
+- Do not use `npm install` or `npm start`.
+- Use Docker runtime in Render.
+- Render free services may sleep.
+- Keep `N8N_ENCRYPTION_KEY` safe.

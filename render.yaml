@@ -7,15 +7,19 @@ services:
     envVars:
       - key: N8N_PORT
         value: "5678"
+      - key: PORT
+        value: "5678"
       - key: N8N_PROTOCOL
         value: https
       - key: GENERIC_TIMEZONE
         value: Asia/Singapore
       - key: TZ
         value: Asia/Singapore
-      - key: N8N_ENCRYPTION_KEY
-        sync: false
+      - key: N8N_PROXY_HOPS
+        value: "1"
       - key: N8N_HOST
         sync: false
       - key: WEBHOOK_URL
+        sync: false
+      - key: N8N_ENCRYPTION_KEY
         sync: false
