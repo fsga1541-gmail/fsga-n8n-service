@@ -1,0 +1,52 @@
+{
+  "name": "Simple n8n Health Test Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "health-check",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "health_webhook",
+      "name": "Health Check Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -300,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"message\": \"n8n is running\", \"timestamp\": new Date().toISOString() } }}",
+        "options": {}
+      },
+      "id": "health_response",
+      "name": "Return Health Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        0,
+        100
+      ]
+    }
+  ],
+  "connections": {
+    "Health Check Webhook": {
+      "main": [
+        [
+          {
+            "node": "Return Health Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
