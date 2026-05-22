@@ -1,1 +1,186 @@
-Test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic AI Customer Support Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+    }
+    header {
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: white;
+      padding: 64px 24px;
+      text-align: center;
+    }
+    header h1 { font-size: 42px; margin: 0 0 14px; }
+    header p { font-size: 18px; max-width: 900px; margin: 0 auto; line-height: 1.6; color: #e6edf9; }
+    .wrap { max-width: 1180px; margin: auto; padding: 28px 18px 60px; }
+    .status {
+      margin-top: -38px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat, .card, .flow, .agent {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+    .stat strong { display: block; font-size: 28px; color: #1d4ed8; }
+    .stat span { color: #475569; }
+    h2 { margin-top: 38px; font-size: 28px; color: #0f172a; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card h3 { margin-top: 0; color: #1d4ed8; }
+    .card p, li { line-height: 1.55; color: #334155; }
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .flow { overflow-x: auto; }
+    .flowline {
+      min-width: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px;
+    }
+    .node {
+      background: #eff6ff;
+      border: 2px solid #bfdbfe;
+      color: #1e3a8a;
+      border-radius: 14px;
+      padding: 16px;
+      min-width: 140px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .arrow { font-size: 28px; color: #64748b; }
+    .agents { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .agent h3 { margin: 0 0 8px; }
+    .agent small { color: #64748b; font-weight: bold; }
+    .kpi-table { width: 100%; border-collapse: collapse; background: white; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08); }
+    .kpi-table th, .kpi-table td { padding: 16px; border-bottom: 1px solid #e5e7eb; text-align: left; vertical-align: top; }
+    .kpi-table th { background: #0f172a; color: white; }
+    .button-row { text-align: center; margin-top: 34px; }
+    .btn { display: inline-block; margin: 8px; padding: 14px 22px; border-radius: 12px; text-decoration: none; font-weight: bold; }
+    .primary { background: #1d4ed8; color: white; }
+    .secondary { background: white; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    footer { text-align: center; padding: 24px; color: #64748b; }
+    @media (max-width: 900px) {
+      .status, .grid, .agents { grid-template-columns: 1fr; }
+      header h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agentic AI Customer Support Improvement</h1>
+    <p>Portfolio web service for a retail banking SME experiencing delays, repetitive handling, inconsistent replies, poor tracking, and high support workload.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="status">
+      <div class="stat"><strong>6</strong><span>Portfolio Areas A1–A6</span></div>
+      <div class="stat"><strong>4</strong><span>AI Support Agents</span></div>
+      <div class="stat"><strong>2+</strong><span>Corrective Actions</span></div>
+      <div class="stat"><strong>Live</strong><span>Render Web Service</span></div>
+    </section>
+
+    <h2>Business Problem</h2>
+    <section class="grid">
+      <div class="card"><span class="tag">Issue</span><h3>Manual Query Handling</h3><p>Support staff manually collect customer details, analyse requests, and prepare responses across disconnected systems.</p></div>
+      <div class="card"><span class="tag">Impact</span><h3>Slow and Inconsistent Service</h3><p>Customers experience delayed replies, repeated explanations, and different answers from different staff.</p></div>
+      <div class="card"><span class="tag">Goal</span><h3>Agentic AI Workflow</h3><p>Use AI agents to classify queries, retrieve knowledge, track status, and recommend consistent responses.</p></div>
+    </section>
+
+    <h2>A1: Key Decisions</h2>
+    <section class="grid">
+      <div class="card"><h3>1. Which queries to automate?</h3><p>Start with repetitive FAQ-style requests such as account information, card issues, application status, and general banking questions.</p></div>
+      <div class="card"><h3>2. Which systems to integrate?</h3><p>Connect online forms, email intake, customer record lookup, ticket status, and knowledge base retrieval.</p></div>
+      <div class="card"><h3>3. When to escalate?</h3><p>Escalate high-risk, low-confidence, complaint, fraud, or policy-sensitive cases to human staff.</p></div>
+    </section>
+
+    <h2>A2: Corrective Actions</h2>
+    <section class="grid">
+      <div class="card"><h3>AI Query Triage Agent</h3><p>Classifies incoming messages, identifies intent and urgency, and routes the case to the correct queue automatically.</p></div>
+      <div class="card"><h3>RAG Knowledge Agent</h3><p>Retrieves approved FAQ and policy information before generating a response, improving consistency and reducing staff effort.</p></div>
+      <div class="card"><h3>Status Tracking Dashboard</h3><p>Shows open, pending, escalated, and resolved cases so staff and managers can monitor real-time progress.</p></div>
+    </section>
+
+    <h2>A3: Root Cause Technique — 5 Whys</h2>
+    <section class="card">
+      <ol>
+        <li>Why are customers waiting too long? Staff take time to check multiple systems manually.</li>
+        <li>Why must staff check multiple systems? Customer information and query history are disconnected.</li>
+        <li>Why are responses inconsistent? Staff use different sources or personal judgement.</li>
+        <li>Why is status tracking weak? Follow-ups are recorded manually.</li>
+        <li>Root cause: the workflow lacks integrated automation, standard knowledge retrieval, and real-time tracking.</li>
+      </ol>
+    </section>
+
+    <h2>Agentic AI Workflow</h2>
+    <section class="flow">
+      <div class="flowline">
+        <div class="node">Customer Query</div><div class="arrow">→</div>
+        <div class="node">Triage Agent</div><div class="arrow">→</div>
+        <div class="node">Customer Lookup</div><div class="arrow">→</div>
+        <div class="node">RAG Knowledge Agent</div><div class="arrow">→</div>
+        <div class="node">Response / Escalation</div><div class="arrow">→</div>
+        <div class="node">Status Tracking</div>
+      </div>
+    </section>
+
+    <h2>AI Agent Roles</h2>
+    <section class="agents">
+      <div class="agent"><small>Reactive</small><h3>Triage Agent</h3><p>Classifies incoming query type and urgency.</p></div>
+      <div class="agent"><small>Deliberative</small><h3>RAG Agent</h3><p>Searches approved knowledge base before answering.</p></div>
+      <div class="agent"><small>Hybrid</small><h3>Escalation Agent</h3><p>Checks risk rules and routes complex cases to humans.</p></div>
+      <div class="agent"><small>Reactive</small><h3>Tracking Agent</h3><p>Updates ticket status and dashboard metrics.</p></div>
+    </section>
+
+    <h2>A4: Controlled Testing Plan</h2>
+    <section class="grid">
+      <div class="card"><h3>Step 1: Pilot Dataset</h3><p>Use sample banking queries, FAQs, and mock customer records in a controlled test environment.</p></div>
+      <div class="card"><h3>Step 2: Human Review</h3><p>Compare AI responses against approved answers and staff judgement before customer release.</p></div>
+      <div class="card"><h3>Step 3: Limited Rollout</h3><p>Deploy to one support team or one query category, monitor issues, then improve prompts and rules.</p></div>
+    </section>
+
+    <h2>A5: KPI Monitoring</h2>
+    <table class="kpi-table">
+      <thead><tr><th>KPI</th><th>Target Improvement</th><th>Why It Matters</th></tr></thead>
+      <tbody>
+        <tr><td>Average Response Time</td><td>Reduce by 30–50%</td><td>Shows whether automation improves customer waiting time.</td></tr>
+        <tr><td>First Contact Resolution Rate</td><td>Increase by 20%</td><td>Shows whether customers receive correct answers without repeated follow-ups.</td></tr>
+        <tr><td>Escalation Accuracy</td><td>Maintain high-risk detection above 95%</td><td>Ensures sensitive banking cases are still handled safely by staff.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>A6: Issue Reporting to Stakeholders</h2>
+    <section class="card">
+      <p>If an issue occurs during testing, prepare a short issue report containing the date, test case, affected workflow step, screenshot/log evidence, severity level, root cause, temporary workaround, owner, and target resolution date. Share it with the support manager, IT team, compliance representative, and project sponsor.</p>
+    </section>
+
+    <div class="button-row">
+      <a class="btn primary" href="/health">Check Health API</a>
+      <a class="btn secondary" href="/api/message">View JSON API</a>
+    </div>
+  </main>
+
+  <footer>Agentic AI Portfolio Web Service • SME Retail Banking Customer Support</footer>
+</body>
+</html>
