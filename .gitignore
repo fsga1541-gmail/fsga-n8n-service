@@ -1,6 +1,2 @@
+n8n_data
 .env
-node_modules
-.n8n
-data
-.DS_Store
-npm-debug.log
